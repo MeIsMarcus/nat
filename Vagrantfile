@@ -7,10 +7,7 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 
 iptables -I FORWARD 1 -j LOG --log-prefix='[gateway] '
-iptables -I OUTPUT 1 -j LOG  --log-prefix='[gateway] '
-iptables -t nat -I PREROUTING 1 -j LOG  --log-prefix='[gateway] '
-iptables -t nat -I POSTROUTING 1 -j LOG  --log-prefix='[gateway] '
-iptables -t nat -I OUTPUT 1 -j LOG --log-prefix='[gateway] '
+
 
 
 iptables-save | sudo tee /etc/iptables.sav
